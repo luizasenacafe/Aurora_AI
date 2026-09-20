@@ -1,8 +1,6 @@
-# Aurora — Assistente de IA Local
+# Betelgeuse A.I. — IA local e privada
 
-Aplicação desktop (Windows) construída com **React + Vite + Electron**.
-A interface é 100% local e será conectada futuramente a um backend em
-**Python + LM Studio** para executar um modelo de linguagem localmente.
+Aplicação desktop para executar modelos de IA localmente, com foco em privacidade e controle dos dados. O repositório preserva a primeira interface Electron e agora inclui a implementação Python atual, conectada ao LM Studio e preparada para uso local ou por servidor HTTPS privado.
 
 ## 📁 Estrutura
 
@@ -94,3 +92,10 @@ setIsThinking(false);
 
 ## 📝 Licença
 MIT
+
+
+## Betelgeuse A.I. — implementação atual
+
+A pasta [`betelgeuse-python/`](betelgeuse-python/) contém a versão atual do projeto: interface espacial em Python/PySide6, conexão com modelos carregados no LM Studio, perfis de conversa, API Python para servidor privado, autenticação por token e tutorial de primeiro acesso.
+
+A Betelgeuse foi criada para que prompts e conversas possam permanecer no computador da pessoa ou no servidor escolhido, sem depender de APIs de grandes plataformas. Consulte [`betelgeuse-python/LEIA-ME.md`](betelgeuse-python/LEIA-ME.md) para executar a versão local.
