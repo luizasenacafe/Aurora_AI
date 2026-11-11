@@ -1,0 +1,5 @@
+Generated using the built-in image-generation tool. This is an artistic visualization, not an astronomical photograph.
+Asset: web/assets/betelgeuse-red-supergiant.png
+
+Final prompt:
+Use case: stylized-concept. Asset type: ultra high quality website background, wide landscape 16:9. A cinematic red supergiant star inspired by Betelgeuse in deep black space. Huge vivid crimson sphere centered at 70% horizontal, 46% vertical, entire sphere visible occupying about 60% of image height. Intricate turbulent molten red surface, fine fiery plasma filaments and glowing orange fissures, billowing smoky dark crimson corona and soft wisps of stellar gas drifting outward, luminous delicate solar prominences. Dramatic realistic astrophysical visualization, sophisticated film render, sharp detail on star, softly diffused smoke. Sparse distant tiny stars. Left third is very dark quiet negative space for website navigation; dark edges. Palette obsidian black, deep wine red, scarlet, restrained molten copper highlights. High dynamic range but no white blown-out center. No text, no logos, no UI, no planets or rings, no watermark. This is a background asset not a screenshot.

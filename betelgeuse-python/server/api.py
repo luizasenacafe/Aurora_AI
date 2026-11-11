@@ -12,6 +12,7 @@ import httpx
 from fastapi import FastAPI, Request, Depends, HTTPException
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, ConfigDict, model_validator
 from storage import Keys, read_config
 
@@ -52,6 +53,14 @@ def create_app(config=None, keys=None, transport=None):
 
     app=FastAPI(title='Betelgeuse A.I. Server',docs_url=None,redoc_url=None,openapi_url=None,lifespan=lifespan)
     app.state.jobs=jobs
+    # Allow only the Betelgeuse web app and its local preview. Tokens remain mandatory.
+    app.add_middleware(CORSMiddleware,
+        allow_origins=config.get('web_origins', [
+            'https://betelgeuse-ai.luiizan12.chatgpt.site',
+            'https://betelgeuse-ai-luiza.luiizan12.chatgpt.site',
+            'http://127.0.0.1:8766', 'http://localhost:8766']),
+        allow_credentials=False, allow_methods=['GET', 'POST'],
+        allow_headers=['Authorization', 'Content-Type'], max_age=600)
 
     async def auth(request:Request):
         value=request.headers.get('authorization','')

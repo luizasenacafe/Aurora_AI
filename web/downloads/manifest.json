@@ -1,0 +1,21 @@
+{
+  "filename": "Betelgeuse-Setup.exe",
+  "size": 51872499,
+  "parts": [
+    {
+      "name": "Betelgeuse-Setup.part1",
+      "size": 20971520,
+      "sha256": "a3d674983d73ab5078f562e0f3f2f327497af305bb88664d53c50fdb77afa4f4"
+    },
+    {
+      "name": "Betelgeuse-Setup.part2",
+      "size": 20971520,
+      "sha256": "ca4e0105a2630757e56c57d15ad0ad3b2f8e377747872ecad61b92789ca2aee6"
+    },
+    {
+      "name": "Betelgeuse-Setup.part3",
+      "size": 9929459,
+      "sha256": "f33cbb81373bd65129f46acf4f0bbde4c978801bd9e59a403469dc8aea60e3a2"
+    }
+  ]
+}

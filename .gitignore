@@ -1,0 +1,36 @@
+# Private state and secrets
+.env
+.env.*
+!.env.example
+config.json
+keys.db*
+*.db
+*.db-*
+*.sqlite*
+status.json
+status.tmp
+*.log
+*.log.*
+*.pem
+*.key
+credentials*.json
+.openai/
+.sites-runtime/
+# Generated files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.vscode/
+.idea/
+node_modules/
+build/
+dist/
+release/
+*.exe
+*.msi
+*.zip
+*.tar.gz
+.DS_Store
+Thumbs.db

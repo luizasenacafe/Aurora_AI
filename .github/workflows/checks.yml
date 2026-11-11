@@ -1,0 +1,26 @@
+name: Checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  python:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r betelgeuse-python/server/requirements.txt -r betelgeuse-python/source/requirements.txt
+      - run: python -m unittest discover -s betelgeuse-python/source -p "test_*.py" -v
+      - run: python -m unittest discover -s betelgeuse-python/server -p "test_*.py" -v
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check web/app.js
+      - run: node --check web/download.js

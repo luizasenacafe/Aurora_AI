@@ -37,6 +37,18 @@ class ServerTests(unittest.TestCase):
         self.assertEqual(self.client.get('/v1/models',headers=self.headers).status_code,200)
         self.keys.revoke(self.kid)
         self.assertEqual(self.client.get('/v1/models',headers=self.headers).status_code,401)
+    def test_web_cors_preserves_auth_and_rejects_untrusted_origins(self):
+        origin='https://betelgeuse-ai.luiizan12.chatgpt.site'
+        headers={'Origin':origin,'Access-Control-Request-Method':'POST','Access-Control-Request-Headers':'authorization,content-type'}
+        response=self.client.options('/v1/aurora/jobs',headers=headers)
+        self.assertEqual(response.status_code,200)
+        self.assertEqual(response.headers['access-control-allow-origin'],origin)
+        response=self.client.get('/v1/models',headers={'Origin':origin})
+        self.assertEqual(response.status_code,401)
+        self.assertEqual(response.headers['access-control-allow-origin'],origin)
+        response=self.client.options('/v1/aurora/jobs',headers={**headers,'Origin':'https://untrusted.example'})
+        self.assertEqual(response.status_code,400)
+        self.assertNotIn('access-control-allow-origin',response.headers)
     def test_roundtrip_persona_and_job_ownership(self):
         models=self.client.get('/v1/models',headers=self.headers).json()['data']
         self.assertEqual([m['id'] for m in models],['chat-model'])

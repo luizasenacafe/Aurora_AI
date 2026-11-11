@@ -1,0 +1,35 @@
+/* The star stays sharp; only the surfaces above it diffuse the light. */
+:root{--bg:#080609;--muted:#c2b9c0;--line:#f1c9bb26;--copper:#ffb895}
+.cosmos{background:#080609}
+.supergiant{position:absolute;width:100%;height:100%;object-fit:cover;object-position:65% center;transform-origin:70% 46%;animation:stellar-drift 42s ease-in-out infinite alternate;will-change:transform}
+.cosmic-shade{position:absolute;inset:0;background:linear-gradient(90deg,#08060980,transparent 68%),linear-gradient(0deg,#080609c9,transparent 60%,#08060925)}
+.stellar-haze{position:absolute;inset:0;mix-blend-mode:screen;filter:blur(28px);opacity:.28;pointer-events:none;will-change:transform;animation:stellar-smoke 26s ease-in-out infinite alternate}
+.haze-one{background:radial-gradient(ellipse at 83% 37%,#fd52204a,transparent 35%),radial-gradient(ellipse at 62% 65%,#aa1e303d,transparent 40%)}
+.haze-two{background:radial-gradient(ellipse at 58% 22%,#ec583638,transparent 30%),radial-gradient(ellipse at 94% 76%,#b5243055,transparent 37%);animation-duration:37s;animation-delay:-14s}
+#stars{opacity:.35}.grain{opacity:.08}
+.sidebar{background:#09080c94;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.topbar{background:#100b101f;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.welcome{text-shadow:0 2px 18px #000,0 1px 4px #000a}
+.welcome h1 em{background:none;color:#ffd1b7;text-shadow:0 2px 12px #180707}
+.intro{color:#e7d9d6}.eyebrow,.orbit-caption{color:#f2c3b3}
+.mode-card,.composer{background:linear-gradient(120deg,#160e16a8,#100c158a);border-color:#f1c9bb40;backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);box-shadow:inset 0 1px #ffe5d20a,0 12px 38px #0003;text-shadow:none}
+.mode-card:hover{background-color:#53232855;border-color:#ffd0ad80}
+.mode-card p,.mode-caption,.mode-action{color:#e5cfc9}
+.mode-card h2{color:#fff4ef}.composer textarea::placeholder{color:#c5b9c4}
+.suggestions button,.connection-badge{background:#140e18a3;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#e3d2d4;border-color:#f1c9bb30}
+.notice,.disclaimer{color:#cfc1cd;text-shadow:0 1px 5px #000}
+.privacy-card{background:#190f172e}.nav.active{background:#edac9612}
+.messages{padding:20px 18px;background:#100b138c;border:1px solid #f1c9bb26;border-radius:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.message.user{background:#d2857120}.message-content{color:#f0e9ee}
+dialog{background:linear-gradient(135deg,#21151bea,#100d17f0);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:#efb9a83d}
+dialog::backdrop{background:#05040870;backdrop-filter:blur(5px)}
+.orbital-mark{width:98px;height:73px;margin-bottom:8px;opacity:.9}
+.orbital-mark span{width:55px;height:55px;background:radial-gradient(circle at 32% 25%,#ffc7a0,#c95343 30%,#511e2d 70%,#1b0c18);box-shadow:0 0 24px #f8684350}
+.orbital-mark i{inset:21px -3px}.orbital-mark b{inset:17px 0}
+.topbar .motion{margin-left:auto;white-space:nowrap;padding:9px;font-size:12px;color:#dec8c7}
+.download-page{position:relative}.download-page::before{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(#08060999,#080609e6),url('assets/betelgeuse-red-supergiant.png') 65% center/cover}
+@keyframes stellar-drift{from{transform:scale(1.02) translate3d(0,0,0)}to{transform:scale(1.09) translate3d(-1%,1%,0)}}
+@keyframes stellar-smoke{from{transform:translate3d(-2%,2%,0) scale(1);opacity:.18}to{transform:translate3d(3%,-3%,0) scale(1.12);opacity:.42}}
+@media(min-width:1200px){.workspace{max-width:1060px}.welcome h1{font-size:54px}.welcome{padding-top:18px}.orbital-mark{margin-top:0}}
+@media(max-width:800px){.supergiant{object-position:72% center}.cosmic-shade{background:linear-gradient(0deg,#080609b3,transparent 75%)}.topbar{gap:5px;padding:0 16px}.topbar .breadcrumb{display:none}.topbar .motion{margin-left:0;margin-right:auto}.sidebar{background:#09080c85}.mode-card,.composer{backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}.orbital-mark{width:98px;height:73px}.orbital-mark span{width:55px;height:55px}.stellar-haze{filter:blur(18px)}}
+@media(prefers-reduced-motion:reduce){.supergiant,.stellar-haze{animation:none;will-change:auto}}
